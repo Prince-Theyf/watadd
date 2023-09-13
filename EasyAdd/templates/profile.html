@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Blog Home - Ajouter des contacts Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Ajouter des contacts</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="profile.html">
+                <img src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" class=" mx-5 rounded-circle" alt="Profile Picture" style="width: 30px; height: 30px;">
+            </a>
+        </nav>
+        <!-- Page header with logo and tagline-->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <div class="card" style="margin: 30% auto;">
+                  <div class="card-body text-center">
+                    <img src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" class="rounded-circle mb-3" alt="Profile Picture" width="150" height="150">
+                    <h5 class="card-title">John Doe</h5>
+                    <p class="card-text">Front-end Developer</p>
+                    <ul class="list-unstyled">
+                      <li><i class="bi bi-envelope-fill me-2"></i> john.doe@example.com</li>
+                      <li><i class="bi bi-phone-fill me-2"></i> (123) 456-7890</li>
+                      <li><i class="bi bi-geo-fill me-2"></i> City, Country</li>
+                    </ul>
+                    <hr>
+                    <h5 class="card-title">About Me</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus nunc at felis
+                      dignissim consectetur. Proin lobortis consequat tortor, sit amet congue nisl scelerisque in. Donec
+                      pharetra sem sed orci luctus, eu fermentum felis pulvinar.</p>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#editModal">Modifier</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        
+          <!-- Edit Modal -->
+          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editModalLabel">Modifier le profil</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="edit_name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="edit_name" value="John Doe" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit_email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="edit_email" value="john.doe@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit_phone" class="form-label">Phone Number</label>
+                      <input type="text" class="form-control" id="edit_phone" value="(123) 456-7890" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edit_city" class="form-label">City, Country</label>
+                      <input type="text" class="form-control" id="edit_city" value="City, Country" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit_category" class="form-label">Category</label>
+                        <select class="form-select" id="category">
+                            <option value="1">1</option>
+                            <option value="1">2</option>
+                            <option value="1">3</option>
+                          </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit_about" class="form-label">About Me</label>
+                        <textarea class="form-control" id="edit_about" rows="5" required>About Me</textarea>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+                <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+    <script>
+      const addButton = document.querySelector('.addButton');
+        addButton.addEventListener('click', function() {
+            addButton.textContent = 'Added';
+            addButton.classList.add('btn-disabled');
+            addButton.disabled = true;
+        });
+      </script>
+      
+</html>

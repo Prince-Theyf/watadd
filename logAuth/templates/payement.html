@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatAdd | Payement</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <div class="text-danger"><small>Numero : </small>
+        <i class="text-indent">numero précédé de l'indicatif du pays san ' + ' et ' 00 '</i></div>
+        <input type="text" class="form-control" name="dep">
+        <div class="text-danger">L'abonnement est à <small class="text-uppercase">200f CFA</small>
+        <button class="btn btn-primary">Lancer le processus</button>
+    </form>
+    <kkiapay-widget sandbox="true" amount="1" key="9c58f1035115afcd3c12f2bb58f3d4443e253d8b" callback="https:kkiapay-redirect.com" />
+    <script src="https://cdn.kkiapay.me/k.js"></script>
+    <kkiapay-widget  amount="1" key="c8e54140282611eeb689b9c06d29ab2e"
+            callback="https://kkiapay-redirect.com" />
+
+</body>
+</html>

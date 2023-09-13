@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Eduport - LMS, Education and Course Theme</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="../fonts.googleapis.com/index.html">
+	<link rel="preconnect" href="../fonts.gstatic.com/index.html" crossorigin>
+	<link rel="stylesheet"
+		href="../fonts.googleapis.com/css23ab4.css?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7N7LGGGWT1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-7N7LGGGWT1');
+	</script>
+
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row rounded-2 border my-5">
+            {% if messages %}
+            {% for men in messages%}
+            <div class="text-danger text-center mb-4 p-2" ><b>{{men}}</b></div>
+            {% endfor %}
+            {% endif %}
+            <form action="" method="POST" novalidate>   {% csrf_token %}
+                <div class="card"> 
+                    <div>
+                        <div>
+                            <label for="id_username" class="mt-4">Nom d'utilisateur :<span class="text-danger">*</span> </label>
+                            {% if form.username.errors %}
+                            {% for er in form.username.errors %}
+                            <div class="text-danger text-center"><small>{{er}}</small></div>
+                            {% endfor %}
+                            {% endif %}
+                            {{form.username}}<br>
+                            <label for="id_pwd" class="mt-4">Mot de passe :<span class="text-danger">*</span></label>
+                            {% if form.pwd.errors %}
+                            {% for er in form.pwd.errors %}
+                            <div class="text-danger text-center"><small>{{er}}</small></div>
+                            {% endfor %}
+                            {% endif %}
+                            {{form.pwd}}
+                            <a href="reseting" class=" left m-5 mb-4"><i class="bi bi-info-circle fa-fw me-2"></i>Mot de passe oublié</a>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary m-2">Se connecter</button>
+                            <p class="mt-2">Vous n'avez pas de compte ?<a href="register"> Créer un compte</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
+{% block scripts %}
+<script>
+    $(document).ready(function(){
+    $('input').keyup(function(){
+        let entry = $(this).val();
+        if(entry ==""){
+            if(!$(this).hasClass('is-invalid')){
+                $(this).addClass('is-invalid');
+            }
+            else{
+                $(this).removeClass('is-invalid');
+            }
+        }
+    })
+})
+
+</script>
+<script src="js/mainlog.js"></script>
+
+{% endblock %}

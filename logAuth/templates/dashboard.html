@@ -1,0 +1,318 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Eduport - LMS, Education and Course Theme</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="../fonts.googleapis.com/index.html">
+	<link rel="preconnect" href="../fonts.gstatic.com/index.html" crossorigin>
+	<link rel="stylesheet"
+		href="../fonts.googleapis.com/css23ab4.css?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7N7LGGGWT1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-7N7LGGGWT1');
+	</script>
+
+</head>
+<body>
+    <!-- Header START -->
+<header class="navbar-light header-static navbar-sticky bg-blue " id="fixed">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl me-5">
+		<div class="container px-5 px-xl-5">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-animation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse me-5 w-100 collapse" id="navbarCollapse">
+
+				<!-- Nav category menu START -->
+				
+				<!-- Nav category menu END -->
+
+				<!-- Nav Main menu START -->
+				<ul class="navbar-nav navbar-nav-scroll me-auto">
+					<!-- Nav item 1 Demos -->
+					<li class="nav-item dropdown">
+						<a class="nav-link " href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accueil</a>
+					</li>
+					<!-- Nav item 2 Pages -->
+					<li class="nav-item dropdown">
+						<a class="nav-link" href="#" id="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link" href="#" id="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nous contacter</a>
+					</li>
+
+                    {% if user.is_authenticated %}{% csrf_token %}
+					<!-- Nav item 3 Account -->
+				</ul>
+				<!-- Nav Main menu END -->
+                <ul class="navbar-nav  my-3 my-xl-0 px-4 navbar-nav-scroll me-auto me-5">
+					<!-- Nav item 1 Demos -->
+					<li class="nav-item dropdown dropdown-menu-shadow-stacked">
+						<a class="nav-link bg-primary bg-opacity-10 rounded-3 text-primary px-3 py-3 py-xl-0" href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-ui-radios-grid me-2"></i><span>Category</span></a>
+						<ul class="dropdown-menu" aria-labelledby="categoryMenu">
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">Informatique</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<!-- dropdown submenu open right -->
+									<li class="dropdown-submenu dropend">
+										<a class="dropdown-item dropdown-toggle" href="/dashboard/{{ user.username }}/webbing">Developpment Web</a>
+										
+									</li>
+									<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/DataScience">Data Science</a> </li>
+									<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/mobile">Developpment Mobile</a> </li>
+									<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/programing">Programmation</a> </li>
+									<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/seo">SEO</a></li>
+									
+									
+								</ul>
+							</li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/design">Design graphique</a></li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/durty">Sales Plans🔞</a> </li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/visibility">Chasseurs de vues</a> </li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/maininfo">Maintenance informatique</a> </li>
+
+							
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="/dashboard/{{ user.username }}/marketing">Marketing</a>
+								<div class="dropdown-menu dropdown-menu-start dropdown-width-lg" data-bs-popper="none">
+									<div class="row p-4">
+										<!-- Dropdown column item -->
+										<div class="col-xl-6 col-xxl-4 mb-4 mb-xl-0">
+											<h6 class="mb-0">Get started</h6>
+											<hr> <!-- Divider -->
+											<ul class="list-unstyled">
+												<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/accesssory">Accessoires</a> </li>
+												<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/clothes">Fringues</a> </li>
+												<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/beauty">Produits de beauté</a></li>
+												<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/digitmarket">Marketing Digital</a> </li>
+												<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/immobilier">Marketing Digital</a> </li>
+											</ul>
+										</div>
+								</div>
+							</li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/music">Musique</a></li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/sante">Santé & fitness</a></li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/coach">Coaching</a> </li>
+							<li> <a class="dropdown-item" href="/dashboard/{{ user.username }}/scientist">Maths & logiques</a></li>
+							<li> <hr class="dropdown-divider"></li>
+							<!-- <li> <a class="dropdown-item bg-primary text-primary bg-opacity-10 rounded-2 mb-0" href="#">View all categories</a></li> -->
+						</ul>
+					</li>
+				</ul>
+				<!-- Nav Search START -->
+				<div class="nav my-5 my-xl-2 px-5 flex-nowrap align-items-center">
+					<div class="nav-item w-100">
+						<form class="position-relative" method="POST">{% csrf_token %}
+							<input name="subject" class="form-control pe-1 bg-transparent" type="search" placeholder="Entrez un nom" aria-label="Search">
+							<button class="btn bg-transparent px-1 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>
+						</form>
+					</div>
+				</div>
+				<!-- Nav Search END -->
+			</div>
+			<!-- Main navbar END -->
+            
+			<!-- Profile START -->
+			<div class="dropdown  me-4 ms-5 ms-lg-4">
+				<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+					<img class="avatar-img rounded-circle"  src="/media/{{ profil.photo }}" alt="avatar">
+				</a>
+				<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+					<!-- Profile info -->
+					<li class="px-3">
+						<div class="d-flex align-items-center">
+							<!-- Avatar -->
+							<div class="avatar me-3">
+                                <img src="/media/{{ profil.photo }}" class="avatar-img rounded-circle shadow" width="70" alt="img-{{user.username.capitalize}}" >
+                            </div>
+							<div>
+								<span class="h6" href="#">{{ profil.fname.split.1 }}&nbsp;{{ profil.lname }}</span>
+								<p class="small m-1">{{ profil.num }}</p>
+							</div>
+						</div>
+						<hr>
+					</li>
+					<!-- Links -->
+					<li><a class="dropdown-item" href="/profily/{{user.username}}"><i class="fas fa-fw fa-edit me-1"></i>Editer le profil</a></li>
+					<li><a class="dropdown-item" href="#"><i class="fas fa-user-tie fa-fw me-1"></i>Voir le profil</a></li>
+					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Aide</a></li>
+					<li><a class="dropdown-item bg-danger-soft-hover" href="/unlog"><i class="bi bi-power fa-fw me-2"></i>Deconnexion</a></li>
+					<li> <hr class="dropdown-divider"></li>
+					<!-- Dark mode switch START -->
+					<li> <a class="dropdown-item bg-danger-soft-hover text-danger" href="instructor-delete-account.html"><i class="fas fa-fw fa-trash-alt me-1"></i>Supprimer le profil</a> </li>
+
+					<!-- Dark mode switch END -->
+				</ul>
+			</div>
+            {% else %}
+            <!-- Signout button  -->
+            <ul class="navbar-nav  d-lg-inline-block dropdown-item">
+                <a class="btn btn-success  mb-0" href="/log"><i class="fas fa-sign-in-alt me-2"></i>Connexion</a>
+            </ul>
+            <ul class="m-3"></ul>
+            <!-- Signout button  -->
+            <ul class="navbar-nav  d-lg-inline-block dropdown-item">
+                <a class="btn btn-success  mb-0" href="/register"><i class="fas fa-sign-in-alt me-2"></i>Inscription</a>
+            </ul>
+            {% endif %}
+			<!-- Profile START -->
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<div class="container">
+	<div class="row">
+			<div class="card border-5 m-4 p-3 shadow "> 
+				<div>
+					<div>
+						<div class="container m-5">
+							<div class="container  m-5">
+								<div class="container m-4">
+									{% if user.is_authenticated %}
+	{% if others %}
+    	{% if profil.possible > profil.abonnes|add:profil.ajoutes %}
+			{% for other in others %}
+				{% if other.name not in profil.added %}
+					{% if other.possible > other.abonnes|add:other.abonnes %}
+						<div class="bg-transparent border rounded p-2 m-4">
+							<div class="d-flex align-items-center">
+								<img class="img-fluid flex-shrink-0 m-3" src="/media/{{ other.photo }}" style="width: 100px; height: 120px;">
+								<div class="ps-3">
+									<h5 class="mb-3">{{ other.lname }} {{ other.fname }}</h5>
+									<hr>
+									<p><i class=" m-2">{{ other.desc|slice:30 }}... </i></p>
+									<p class="align-content-sm-center ml-0">
+										<a href="/add/{{ other.name }}/{{user.username}}" class="btn btn-primary">Ajouter</a>
+										<i class="m-2">{{ other.pref }} </i>
+									</p>
+								</div>
+								
+							</div>
+						</div>
+					{% endif %}
+				{% elif others.pref.split.1 in profil.pref.split %}
+					<div class="bg-transparent border rounded p-2 m-4">
+						<div class="d-flex align-items-center">
+							<img class="img-fluid flex-shrink-0 m-3" src="/media/{{ others.photo }}" style="width: 100px; height: 120px;">
+							<div class="ps-3">
+								<h5 class="mb-3">{{ others.lname }}</h5>
+								<hr>
+								<p><i class=" m-2">{{ others.desc }}... </i></p>
+								<p class="align-content-sm-center ml-0">
+									<a href="add/{{ others.name }}/{{user.username}}" class="btn btn-primary">Ajouter</a>
+									<i class="m-2">{{ others.pref }} </i>
+								</p>
+							</div>
+						</div>
+					</div>
+				{% endif %}  
+			{% endfor %}
+    {% elif 5 > profil.shared %}
+			<p class="align-content-sm-center ml-0">
+				Partagez le lien pour add plus de contacts !!!
+				<a href="share/{{ user.username }}" class="btn btn-primary">Partager le lien</a>
+			</p>
+    {% else %}
+			<div class="container mt-5">
+				<div class="container mt-5">
+					<div class="container mt-4">
+						<div class="card- mt-4">
+							<p class="align-content-sm-center ml-0 mt-">
+								Vous avez atteints votre max de partage. Payez l'abonnement pour add plus de contacts !!!
+								<a href="pay/{{user.username}}" class="btn btn-primary">S'abonner</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+	{% endif %}
+	{% else %}
+		
+		<div class="container">
+			<div class="row">
+					<div class=""> 
+						<div>
+							<div>
+								<div class="container m-5">
+									<div class="container  m-5">
+										<div class="container m-4">
+											<div class="m-4">
+												<h6 class="">Aucun contacts WatAdd 
+													{% if subject %}
+														du nom de {{ subject }}
+													{% else %}
+														de cette catégorie
+													{% endif %}
+													!!!
+												</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>	
+
+    {% endif %}   
+{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+<!-- Header END -->
+ 
+  <!-- Bootstrap JS -->
+<script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Vendors -->
+<script src="{% static 'assets/vendor/tiny-slider/tiny-slider.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.js' %}"></script>
+<script src="{% static 'assets/vendor/purecounterjs/dist/purecounter_vanilla.js' %}"></script>
+
+<!-- Template Functions -->
+<script src="{% static 'assets/js/functions.js' %}"></script>  
+</body>
+</html>
